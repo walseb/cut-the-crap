@@ -163,7 +163,7 @@ detectShell opt' = ffmpeg (opt' ^. lc_fileio . in_file . packed)
   , voice_track_map opt'
   , "-filter:a"
                  -- , "silencedetect=noise=-30dB:d=0.5"
-  , "silencedetect=noise="
+  , "silencedetect=noise=-45dB:"
   <> (opt' ^. silent_treshold . to floatToText)
   <> ":d="
   <> (opt' ^. silent_duration . to floatToText)
