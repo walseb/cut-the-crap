@@ -25,7 +25,7 @@ import Control.Monad.IO.Class
 -- | Wrap ffmpeg for convenience and logging
 --  technically supports multiple inputs but for convenice we threw that.
 ffmpeg :: Prelude.FilePath -> [Text] -> Sh [Text]
-ffmpeg file args = ffmpeg' ("-pix_fmt yuv420p" : "-y" : "-i" : Text.pack file : args)
+ffmpeg file args = ffmpeg' ("-y" : "-i" : Text.pack file : args)
 
 ffmpeg' :: [Text] -> Sh [Text]
 ffmpeg' = run "ffmpeg"
