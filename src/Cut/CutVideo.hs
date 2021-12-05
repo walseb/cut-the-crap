@@ -77,7 +77,6 @@ combine tempDir = do
  where -- https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
   args =
     [ "-y"
-    , "-pix_fmt", "yuv420p"
     , "-f"
     , "concat"
     , "-safe"
